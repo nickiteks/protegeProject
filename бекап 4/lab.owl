@@ -1,0 +1,610 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#"
+     xml:base="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent">
+        <rdfs:comment>Онтология медиа контента</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетКонтент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетКонтент"/>
+        <rdfs:domain>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+            </owl:Restriction>
+        </rdfs:domain>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетКонтент -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетКонтент">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетСтрану -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетСтрану">
+        <rdf:type rdf:resource="&owl;FunctionalProperty"/>
+        <rdfs:range>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетСтрану"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана"/>
+            </owl:Restriction>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяВидео -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяВидео">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяКонтентом"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяЗвуком -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяЗвуком">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяКонтентом"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяКонтентом -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#являетсяКонтентом">
+        <rdf:type rdf:resource="&owl;TransitiveProperty"/>
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетКонтент"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#AIFFЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#AIFFЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#WAVЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#APEЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#APEЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACКонтент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACКонтент">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#FLACЗвук"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеСПотерямиЗвук"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеСПотерямиЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#WAVЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#WAVЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Видео -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Видео"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИнтересныйКонтент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИнтересныйКонтент">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:minCardinality rdf:datatype="&xsd;nonNegativeInteger">3</owl:minCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Италия -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Италия">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентИзРоссии -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентИзРоссии">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетСтрану"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Россия"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентСжатиеСПотерями -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентСжатиеСПотерями">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентЦветнойСжатиеСПотерями -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#КонтентЦветнойСжатиеСПотерями">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеВидео"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:allValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:allValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Россия -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Россия">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#США -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#США">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеСПотерямиЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеСПотерямиЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СпискиЗначений -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СпискиЗначений"/>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СписокЗначенийСтрана">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Италия"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Россия"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#США"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СпискиЗначений"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ТестНепоследовательностиЗвук -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ТестНепоследовательностиЗвук">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук"/>
+        <rdfs:comment>Этот класс должен оказаться несовместимым при 
+проверке онтологии на непротиворечивость</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеMP3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеMP3">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеВидео"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>черно белый контент без сжатия звука
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеOGG -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеOGG">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеВидео"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#OGGЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>черно белый контент без сжатия звука
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеВидео -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеВидео">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Видео"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧерноБелоеВидео"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧерноБелоеВидео -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧерноБелоеВидео">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Видео"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатия -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатия">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#WAVЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#AIFFЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:allValuesFrom>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#AIFFЗвук"/>
+                            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#WAVЗвук"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:allValuesFrom>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧерноБелоеВидео"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>черно белый контент без сжатия звука
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатияAIFF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатияAIFF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ИменованныйКонтент"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#AIFFЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетВидео"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧерноБелоеВидео"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>черно белый контент без сжатия звука
+</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#четвернойMP3 -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#четвернойMP3">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#имеетЗвук"/>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#MP3Звук"/>
+                        <owl:qualifiedCardinality rdf:datatype="&xsd;nonNegativeInteger">4</owl:qualifiedCardinality>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#БезСжатияЗвук"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеБезПотерьЗвук"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#СжатиеСПотерямиЗвук"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеMP3"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЦветноеOGG"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатия"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#ЧернобелоеБезсжатияAIFF"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Видео"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Звук"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Медиаконтент"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="&owl;AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Италия"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#Россия"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/nuls/ontologies/2022/8/mediaContent#США"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
